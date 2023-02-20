@@ -1,0 +1,23 @@
+ *{
+    margin: 0;
+    padding: 0;
+}
+  
+/* .nav-header{
+    border: 2px solid green;
+}
+.nav-logo{
+    background-color: red;
+}
+.nav-content{
+    background-color: green;
+} */
+nav{
+    background-color: rgb(138, 104, 104);
+}
+.nav-header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+

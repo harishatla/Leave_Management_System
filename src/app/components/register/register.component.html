@@ -1,0 +1,107 @@
+<div class="container registrtion-form ">
+    <div class="card w-50">
+        <div class="card-header text-center">
+            <b style="color: green;">REGISTRATION</b>
+        </div>
+        <div class="card-body  ">
+            <div class="form-container">
+                <form class="form" [formGroup]="registerForm" (ngSubmit)="formData(registerForm)">
+                    <div class="Fullname-container row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="fname">Firstname</label>
+                                <input type="text" id="fname" name="firstName" placeholder="Enter Firstname"
+                                    class="form-control" formControlName="firstName">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="Mname">Middlename</label>
+                                <input type="text" id="Mname" placeholder="Enter Lastname" class="form-control"
+                                    name="middleName" formControlName="middleName">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="lname">Lastname</label>
+                                <input type="text" id="lname" name="lastName" placeholder="Enter Lastname"
+                                    class="form-control" formControlName="lastName">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="email-phonenum-container row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Enter Email"
+                                    class="form-control" formControlName="email">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="email" id="phone" name="phone" placeholder="Enter Phone Number"
+                                    class="form-control" formControlName="phone">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="Adress-container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="address">Adress</label>
+                                    <input type="text" id="address" name="address" class="form-control"
+                                        placeholder="Enter Your Adress">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <input type="text" id="city" name="city" class="form-control" formControlName="city">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="state">State</label>
+                                    <input type="text" id="state" name="state" class="form-control" formControlName="state">
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="pin">Pin/Zipcode</label>
+                                    <input type="text" id="pin" name="pin" class="form-control" formControlName="pin">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="country">Country</label>
+                                    <input type="text" id="country" name="coutry" class="form-control" formControlName="country">
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group password-container row">
+                        <div class="col-md-12">
+                            <label for="passord">Create Password</label>
+                            <input type="password" id="passord" name="password" placeholder="Enter Password"
+                                class="form-control" formControlName="password">
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</div>
