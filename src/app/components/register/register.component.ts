@@ -36,6 +36,7 @@ export class RegisterComponent implements OnInit {
   formData(data:any){
     console.log(data.value)
     this.registerForm.reset()
+    
 
   }
 
