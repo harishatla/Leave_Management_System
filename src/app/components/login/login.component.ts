@@ -18,9 +18,9 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   submitLogin(f:any){
+    console.log(f);
     this.auth.login(f.value).subscribe(res=>console.log(res))
     console.log(f.value);
-    
     f.reset()
 
   }
