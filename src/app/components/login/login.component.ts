@@ -22,8 +22,8 @@ export class LoginComponent implements OnInit {
     console.log(f)
     this.auth.login(f.value).subscribe((res)=>{
       console.log(res)
-      // alert('logged in successfully');
-      // this.route.navigate(['/register'])
+      alert('logged in successfully');
+      this.route.navigate(['/register'])
     });
     // f.reset()
   }
