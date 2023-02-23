@@ -1,6 +1,6 @@
 <div class="container">
     <div class="form-container">
-            <div class="card">
+            <div class="card w-50">
                 <div class="card-header text-center">
                     <h3>Login</h3>
                 </div>
@@ -13,8 +13,13 @@
                                     placeholder="enter userId" 
                                     class="form-control"
                                     [(ngModel)]="loginData.userId"
-                                    #userName=ngModel>
+                                    #userName="ngModel"
+                                    minlength="4">
                         </div>
+                        <div *ngIf="!userName?.valid && (userName?.dirty || userName?.touched)">
+                            Invalid First Name
+                         </div>
+
                         <div class="form-group">
                             <label>Password</label>
                             <input type="password"
@@ -22,9 +27,10 @@
                                    placeholder="enter Password" 
                                    class="form-control"
                                    [(ngModel)]="loginData.password"
-                                   ngModel>
+                                   ngModel
+                                   required>
                         </div>
-                        <button type="submit" class="btn btn-success" [disabled]="f.valid">Submit</button>
+                        <button type="submit" class="btn btn-success" [disabled]="!f.valid">Submit</button>
                     </form>
 
                 </div>
