@@ -16,9 +16,12 @@
                             <div class="form-group">
                                 <label for="fname">Firstname</label>
                                 <input type="text" id="fname" name="firstName" placeholder="Enter Firstname"
-                                    class="form-control" formControlName="firstName">
+                                    class="form-control" formControlName="firstName" minlength="10">
                             </div>
                         </div>
+                        <div *ngIf="">
+                            Invalid First Name
+                         </div>
                         <!-- <div class="col-md-4">
                             <div class="form-group">
                                 <label for="Mname">Middlename</label>
@@ -106,7 +109,5 @@
                 </form>
             </div>
         </div>
-
     </div>
-
 </div>
