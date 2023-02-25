@@ -7,8 +7,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { LMSLandingPageComponent } from './lms-landing-page/lms-landing-page.component';
-import { HeaderComponent } from './header/header.component';
+import { LMSLandingPageComponent } from './components/lms-landing-page/lms-landing-page.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
