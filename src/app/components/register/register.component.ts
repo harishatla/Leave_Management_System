@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
  
 
@@ -11,10 +12,10 @@ import { AuthService } from 'src/app/services/auth.service';
 export class RegisterComponent implements OnInit {
   registerForm :FormGroup
 
-  constructor(public fb:FormBuilder,private auth:AuthService ) { 
+  constructor(public fb:FormBuilder,private auth:AuthService,private route:Router, public router:ActivatedRoute ) { 
     this.registerForm= this.fb.group(
       {
-      firstName:['',[Validators.required,Validators.minLength(10),Validators.maxLength(30)]],
+      firstName:['',[Validators.required,Validators.minLength(4)]],
       // middleName:[''],
       lastName:[''],
       email:[''],
@@ -28,19 +29,34 @@ export class RegisterComponent implements OnInit {
       }
     )
   }
+  submitted=false;
 
-  get f(): { [key: string]: AbstractControl } {
-    return this.registerForm.controls;
+  // get f(): { [key: string]: AbstractControl } 
+  // {
+  //   return this.registerForm.controls;
+  // }
+
+  get firstName(){
+    return this.registerForm.get('firstName')
+  }
+  get lastName(){
+    return this.registerForm.get('firstName')
+  }
+  get email(){
+    return this.registerForm.get('firstName')
   }
   
   ngOnInit(): void {
   }
   submitFormData(data:any){
+    this.submitted=true
     console.log(data)
     console.log(data.value)
     this.auth.register(data.value).subscribe((res)=>{
       // console.log(JSON.parse(res))
-      console.log(JSON.stringify(res))
+      // console.log(JSON.stringify(res))
+      console.log(res.userId);
+      this.route.navigate(['/login'],{queryParams:{userId:res.userId}})
     })
     this.registerForm.reset()
   }
