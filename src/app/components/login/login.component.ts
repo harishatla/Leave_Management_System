@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       this.tokenService.saveToken(res.token);
       this.tokenService.saveUser(res.token);
       alert('logged in successfully');
-      this.route.navigate(['/lms_landingPage'])
+      this.route.navigate(['/lms_landingPage'],{queryParams:{fullName:res.fullName,email:res.email}})
     });
     // f.reset()
   }
